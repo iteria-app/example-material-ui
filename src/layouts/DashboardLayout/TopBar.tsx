@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import ThemeSwitch from 'src/components/ThemeSwitch';
 import {
   AppBar,
   Badge,
@@ -29,8 +30,7 @@ const TopBar = ({
   onMobileNavOpen,
   ...rest
 }) => {
-  const classes = useStyles();
-
+  const classes = useStyles()
   return (
     <AppBar
       className={clsx(classes.root, className)}
@@ -42,6 +42,7 @@ const TopBar = ({
           <Logo />
         </RouterLink>
         <Box flexGrow={1} />
+        <ThemeSwitch />
         <Hidden mdDown>
           <IconButton color="inherit">
             <Badge
