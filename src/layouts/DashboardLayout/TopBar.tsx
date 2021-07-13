@@ -11,13 +11,21 @@ import {
   Toolbar,
   makeStyles
 } from '@material-ui/core';
+import InputIcon from '@material-ui/icons/Input';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
-import InputIcon from '@material-ui/icons/Input';
 import Logo from 'src/components/Logo';
+import LanguageSwitch from 'src/components/LanguageSwitch';
 
 const useStyles = makeStyles(() => ({
-  root: {},
+  root: {
+    "& .MuiInputBase-root, & .MuiSvgIcon-root": {
+      color: '#fff'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: 'none'
+    }
+  },
   avatar: {
     width: 60,
     height: 60
@@ -29,8 +37,7 @@ const TopBar = ({
   onMobileNavOpen,
   ...rest
 }) => {
-  const classes = useStyles();
-
+  const classes = useStyles()
   return (
     <AppBar
       className={clsx(classes.root, className)}
@@ -64,6 +71,7 @@ const TopBar = ({
             <MenuIcon />
           </IconButton>
         </Hidden>
+        <LanguageSwitch />
       </Toolbar>
     </AppBar>
   );
